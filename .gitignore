@@ -1,12 +1,26 @@
 # Environnements virtuels
 venv/
+.venv/
+env/
 .env/
+
 # Fichiers temporaires / caches Python
 __pycache__/
 *.pyc
 *.pyo
-# Données et modèles
-data/
-models/
+
+# Dossiers gérés par DVC — on ignore les fichiers, pas le dossier
+data/*.csv
+data/processed/*.csv
+
+# Modèles gérés par DVC
+models/*.pkl
+models/*.joblib
+models/model.pkl
+
 # Notebooks checkpoints
 *.ipynb_checkpoints/
+
+# Fichiers créés par DVC
+# *.dvc  <-- COMMENT OUT OR REMOVE THIS LINE
+.dvc/
