@@ -1,0 +1,14 @@
+stages:
+  prepare:
+    cmd: echo "Add your data preparation commands here"
+    deps:
+      - data/train.csv
+    outs:
+      - data/processed/train.csv
+
+  train:
+    cmd: echo "Add your model training commands here"
+    deps:
+      - data/processed/train.csv
+    outs:
+      - models/model.pkl
