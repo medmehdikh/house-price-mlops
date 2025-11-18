@@ -1,14 +1,22 @@
 stages:
-  prepare:
-    cmd: echo "Add your data preparation commands here"
+  preprocess:
+    cmd: python src/data_process.py
     deps:
+      - src/data_process.py
       - data/train.csv
     outs:
-      - data/processed/train.csv
+      - data/processed/train_processed.csv
 
   train:
-    cmd: echo "Add your model training commands here"
+    cmd: python src/train.py
     deps:
-      - data/processed/train.csv
+      - src/train.py
+      - data/processed/train_processed.csv
     outs:
+      - models/model.pkl
+
+  evaluate:
+    cmd: python src/eval.py
+    deps:
+      - src/eval.py
       - models/model.pkl
