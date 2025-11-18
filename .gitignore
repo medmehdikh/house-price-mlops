@@ -23,4 +23,4 @@ models/model.pkl
 
 # Fichiers créés par DVC
 # *.dvc  <-- COMMENT OUT OR REMOVE THIS LINE
-.dvc/
+#.dvc/
